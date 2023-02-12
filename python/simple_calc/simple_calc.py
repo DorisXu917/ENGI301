@@ -98,11 +98,15 @@ def get_user_input():
          (None, None, None) if the inputs are invalid
     """
     try:
-        number1 = int(input("Enter first number : "))
-        number2 = int(input("Enter second number: "))
+        number1 = float(input("Enter first number : "))
+        number2 = float(input("Enter second number: "))
         op      = input("Enter function (valid values are +, -, *, /, >>, <<, %, **): ")
     
         func    = operators.get(op)
+        
+        if (op == ">>" or op == "<<"):
+            number1 = int(number1)
+            number2 = int(number2)
     except:
         return (None, None, None)
     
