@@ -55,7 +55,11 @@ Error conditions:
 # NOTE - Add import statements to allow access to Python library functions
 
 import operator
+import sys
 
+#
+if sys.version[0] == "2":
+    input = raw_input
 # ------------------------------------------------------------------------
 # Constants
 # ------------------------------------------------------------------------
@@ -97,6 +101,7 @@ def get_user_input():
          Returns tuple: (number, number, function) or 
          (None, None, None) if the inputs are invalid
     """
+    
     try:
         number1 = float(input("Enter first number : "))
         number2 = float(input("Enter second number: "))
