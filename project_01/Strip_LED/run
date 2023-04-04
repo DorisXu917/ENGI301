@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd /var/lib/cloud9/ENGI301/project/Strip_LED
+
+./configure_pins.sh
+./opc-server &
+sleep 15
+
+python3 led_strip_test.py
+
